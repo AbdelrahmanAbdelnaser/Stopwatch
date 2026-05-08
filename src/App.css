@@ -248,3 +248,105 @@ header span {
 .num-contain {
   display: flex;
 }
+
+@media (max-width: 425px) {
+  .app {
+    height: 100vh;
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center;
+    place-content: center;
+    grid-template-rows: repeat(12, 1fr) 10px;
+  }
+  .screen {
+    grid-row: span 4;
+    position: relative;
+    width: 285px;
+    height: 100%;
+    border: 1px solid rgb(158 61 255);
+    box-shadow:
+      inset 6px 0px 9px 0.5px rgb(36 29 76),
+      inset -2px 0px 15px 2.5px rgb(36 29 76);
+    background: rgb(25 32 58 / 43%);
+    backdrop-filter: brightness(1.5);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .screen img {
+    width: 355px;
+    position: absolute;
+    top: -7%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .wrapper {
+    position: relative;
+    top: 1%;
+    width: 441px;
+    height: 441px;
+    margin: auto;
+  }
+  .timer {
+    position: absolute;
+    top: 36%;
+    left: 32%;
+    width: 279px;
+    height: 279px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 8px;
+    background: conic-gradient(#e91e63, #4caf50, #673ab7, #e91e63);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+  .dot {
+    position: absolute;
+    top: 36%;
+    left: 32%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    backdrop-filter: brightness(9);
+    background: #ffffff;
+    box-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 40px #ffffff;
+    transform: translate(-50%, -50%) rotate(279deg) translateY(135px);
+  }
+  .Controllers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    grid-row: span 1;
+    height: 100%;
+    align-items: center;
+  }
+  .Controllers button {
+    width: 21%;
+    height: 60%;
+    border: none;
+    border-radius: 22px;
+    font-size: 16px;
+    color: white;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 13px;
+  }
+  .animation {
+    animation: rotateBorder 60s linear infinite;
+    animation-direction: normal;
+  }
+  @keyframes rotateBorder {
+    0% {
+      transform: translate(-50%, -50%) rotate(279deg) translateY(135px);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(83deg) translateY(135px);
+    }
+  }
+}
