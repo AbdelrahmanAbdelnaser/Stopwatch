@@ -298,4 +298,7 @@ header span {
       transform: translate(-50%, -50%) rotate(83deg) translateY(135px);
     }
   }
+  .container {
+    grid-row: span 8;
+  }
 }
