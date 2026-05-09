@@ -250,9 +250,18 @@ header span {
 }
 
 @media (max-width: 426px) {
+  .app {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2, 1fr) 183px repeat(6, 1fr) 10px;
+    height: 100vh;
+    place-content: center;
+    place-items: center;
+  }
   .screen {
     width: 285px;
     height: 183px;
+    grid-row: 3;
   }
   .screen img {
     width: 355px;
